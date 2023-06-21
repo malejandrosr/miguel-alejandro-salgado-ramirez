@@ -1,0 +1,10 @@
+dist
+public
+node_modules
+.env
+.env.example
+index.html
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+*.d.ts

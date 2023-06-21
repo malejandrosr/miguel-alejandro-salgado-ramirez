@@ -1,0 +1,43 @@
+/**
+ * Used for RHFColorInput and RHFColorPicker components
+ */
+const defaultSwatches = [
+	"#D9D9D9",
+	"#BFBFBF",
+	"#8C8C8C",
+	"#FF4D4F",
+	"#F5222D",
+	"#CF1322",
+	"#FF7A45",
+	"#FA541C",
+	"#D4380D",
+	"#FFA940",
+	"#FA8C16",
+	"#D46B08",
+	"#FFC53D",
+	"#FAAD14",
+	"#D48806",
+	"#FFEC3D",
+	"#FADB14",
+	"#D4B106",
+	"#73D13D",
+	"#52C41A",
+	"#389E0D",
+	"#36CFC9",
+	"#13C2C2",
+	"#08979C",
+	"#40A9FF",
+	"#1890FF",
+	"#096DD9",
+	"#597EF7",
+	"#2F54EB",
+	"#1D39C4",
+	"#9254DE",
+	"#722ED1",
+	"#531DAB",
+	"#F759AB",
+	"#EB2F96",
+	"#C41D7F",
+];
+
+export default defaultSwatches;
