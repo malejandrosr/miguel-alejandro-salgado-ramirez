@@ -3,13 +3,14 @@ import { showNotification } from "@mantine/notifications";
 import { IconX as X } from "@tabler/icons-react";
 
 const useHandleServerRequest = () => {
-	const handleServerRequest = async (onRequesting: () => Promise<void>, setError?: UseFormSetError<any>) => {
+	const handleServerRequest = async (
+		onRequesting: () => Promise<void>,
+		setError?: UseFormSetError<any>,
+	) => {
 		try {
 			await onRequesting();
 		} catch (error) {
 			const { data: errorObject } = error as GENERAL.IServerError;
-
-			console.log(error);
 
 			if (errorObject.code === 422) {
 				if (typeof setError === "function") {

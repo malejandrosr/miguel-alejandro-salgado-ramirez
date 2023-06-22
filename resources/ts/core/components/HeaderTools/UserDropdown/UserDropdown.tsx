@@ -46,7 +46,12 @@ const UserDropdown = () => {
 				<Menu.Target>
 					<UnstyledButton>
 						<Group>
-							<Avatar color="blue" radius="xl" size={40} name={`${name} ${lastname}`} />
+							<Avatar
+								color="blue"
+								radius="xl"
+								size={40}
+								name={`${name} ${lastname}`}
+							/>
 
 							<div className={classes.userInfoContainer}>
 								<Text weight={600} size={12} mr={3}>

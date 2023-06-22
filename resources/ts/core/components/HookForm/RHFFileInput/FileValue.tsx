@@ -6,7 +6,8 @@ const FileValue = ({ file }: CORE.Components.IRHFFileInputFileValue) => {
 		<Center
 			inline
 			sx={(theme) => ({
-				backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
+				backgroundColor:
+					theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
 				fontSize: theme.fontSizes.xs,
 				padding: "3px 7px",
 				borderRadius: theme.radius.sm,

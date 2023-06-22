@@ -121,6 +121,8 @@ class Role extends RoleModel
 
     /**
      * A role belongs to some administrators of the model associated with its guard.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function administrators(): BelongsToMany
     {
@@ -135,6 +137,8 @@ class Role extends RoleModel
 
     /**
      * A role may be given various permissions.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function permissions(): BelongsToMany
     {
@@ -148,6 +152,8 @@ class Role extends RoleModel
 
     /**
      * A role belongs to some users of the model associated with its guard.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users(): BelongsToMany
     {

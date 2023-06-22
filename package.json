@@ -2,7 +2,11 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+		"lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+		"format": "prettier --write ./resources/ts --config .prettierrc"
     },
     "devDependencies": {
         "@types/lodash": "^4.14.195",
@@ -50,12 +54,14 @@
         "@tiptap/react": "^2.0.3",
         "@tiptap/starter-kit": "^2.0.3",
         "add": "^2.0.6",
+        "apexcharts": "^3.41.0",
         "dayjs": "^1.11.8",
         "embla-carousel-react": "^8.0.0-rc07",
         "localforage": "^1.10.0",
         "mantine-react-table": "^1.0.0-beta.13",
         "qs": "^6.11.2",
         "react": "^18.2.0",
+        "react-apexcharts": "^1.4.0",
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.45.0",
         "react-redux": "^8.1.1",

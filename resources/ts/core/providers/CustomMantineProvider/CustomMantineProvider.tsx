@@ -7,7 +7,8 @@ const CustomMantineProvider = ({ children, theme }: CORE.Providers.ICustomMantin
 		defaultValue: "dark",
 	});
 
-	const toggleColorScheme = () => setColorScheme((current) => (current === "dark" ? "light" : "dark"));
+	const toggleColorScheme = () =>
+		setColorScheme((current) => (current === "dark" ? "light" : "dark"));
 
 	return (
 		<ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>

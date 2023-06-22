@@ -6,7 +6,12 @@ import { useActiveGroup, useActiveLink } from "@core/hooks";
 import { isValidArray } from "@helpers";
 import styles from "../styles";
 
-const NavGroupLink = ({ icon: NavGroupIcon, label, links, root }: CORE.Components.INavGroupLink) => {
+const NavGroupLink = ({
+	icon: NavGroupIcon,
+	label,
+	links,
+	root,
+}: CORE.Components.INavGroupLink) => {
 	const { classes, cx, theme } = styles();
 
 	const { opened, toggle } = useActiveGroup(root);
@@ -46,7 +51,9 @@ const NavGroupLink = ({ icon: NavGroupIcon, label, links, root }: CORE.Component
 					<ChevronIcon
 						size={14}
 						style={{
-							transform: opened ? `rotate(${theme.dir === "rtl" ? -90 : 90}deg)` : "none",
+							transform: opened
+								? `rotate(${theme.dir === "rtl" ? -90 : 90}deg)`
+								: "none",
 						}}
 						className={classes.chevron}
 					/>

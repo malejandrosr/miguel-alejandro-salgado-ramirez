@@ -8,7 +8,14 @@ import { isValidArray } from "@helpers";
 
 const { useLazyGetQuery } = baseManagerApi;
 
-const RHFAutocomplete = ({ label, name, param, query = {}, buildOptions, ...rest }: CORE.Components.IRHFAutocomplete) => {
+const RHFAutocomplete = ({
+	label,
+	name,
+	param,
+	query = {},
+	buildOptions,
+	...rest
+}: CORE.Components.IRHFAutocomplete) => {
 	const { control } = useFormContext();
 
 	const [fetch] = useLazyGetQuery();

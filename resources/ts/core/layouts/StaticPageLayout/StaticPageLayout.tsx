@@ -9,7 +9,8 @@ const StaticPageLayout = ({ px = 20, py = 20 }: CORE.Layouts.IStaticPageLayout) 
 			px={px}
 			py={py}
 			style={{
-				background: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[1],
+				background:
+					theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[1],
 			}}
 		>
 			<Outlet />

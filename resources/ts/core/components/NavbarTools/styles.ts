@@ -14,7 +14,9 @@ const styles = createStyles((theme) => {
 			marginLeft: `calc(${theme.spacing.md} * -1)`,
 			marginRight: `calc(${theme.spacing.md} * -1)`,
 			color: theme.colorScheme === "dark" ? theme.white : theme.black,
-			borderBottom: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
+			borderBottom: `${rem(1)} solid ${
+				theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+			}`,
 		},
 
 		links: {
@@ -30,7 +32,9 @@ const styles = createStyles((theme) => {
 		footer: {
 			marginLeft: `calc(${theme.spacing.md} * -1)`,
 			marginRight: `calc(${theme.spacing.md} * -1)`,
-			borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
+			borderTop: `${rem(1)} solid ${
+				theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+			}`,
 		},
 
 		// used for NavLink and NavGroup
@@ -43,7 +47,8 @@ const styles = createStyles((theme) => {
 			fontSize: theme.fontSizes.sm,
 
 			"&:hover": {
-				backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[0],
+				backgroundColor:
+					theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[0],
 				color: theme.colorScheme === "dark" ? theme.white : theme.black,
 			},
 		},
@@ -63,10 +68,13 @@ const styles = createStyles((theme) => {
 			marginLeft: rem(30),
 			fontSize: theme.fontSizes.sm,
 			color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.gray[7],
-			borderLeft: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
+			borderLeft: `${rem(1)} solid ${
+				theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+			}`,
 
 			"&:hover": {
-				backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[0],
+				backgroundColor:
+					theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[0],
 				color: theme.colorScheme === "dark" ? theme.white : theme.black,
 			},
 		},

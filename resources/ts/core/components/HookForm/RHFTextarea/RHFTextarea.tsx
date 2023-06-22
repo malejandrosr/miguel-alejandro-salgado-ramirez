@@ -9,7 +9,14 @@ const RHFTextarea = ({ label, name, autosize = false, ...rest }: CORE.Components
 			name={name}
 			control={control}
 			render={({ field, fieldState: { error } }) => (
-				<Textarea {...field} id={name} label={label} error={error?.message} autosize={autosize} {...rest} />
+				<Textarea
+					{...field}
+					id={name}
+					label={label}
+					error={error?.message}
+					autosize={autosize}
+					{...rest}
+				/>
 			)}
 		/>
 	);

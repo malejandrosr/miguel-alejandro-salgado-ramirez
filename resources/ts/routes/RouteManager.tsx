@@ -14,8 +14,12 @@ const Home = Loader(lazy(() => import("@pages/main/Home")));
 // ** Management
 // Users
 const UsersList = Loader(lazy(() => import("@pages/main/Management/Users/UsersList")));
-const UsersNew = Loader(lazy(() => import("@pages/main/Management/Users/UsersNew")));
-const Roles = Loader(lazy(() => import("@pages/main/Management/Roles")));
+// Roles
+const RolesList = Loader(lazy(() => import("@pages/main/Management/Roles/RolesList")));
+
+// ** Admin
+// Products
+const ProductsList = Loader(lazy(() => import("@pages/main/Admin/Products/ProductsList")));
 
 // ** Error Pages
 const P403 = Loader(lazy(() => import("@pages/errors/P403")));
@@ -56,21 +60,11 @@ const RouteManager = () => {
 				},
 				{
 					path: "users",
-					element: <Outlet />,
-					children: [
-						{
-							path: "",
-							element: <UsersList />,
-						},
-						{
-							path: "new",
-							element: <UsersNew />,
-						},
-					],
+					element: <UsersList />,
 				},
 				{
 					path: "roles",
-					element: <Roles />,
+					element: <RolesList />,
 				},
 			],
 		},
@@ -81,6 +75,26 @@ const RouteManager = () => {
 				{ path: "404", element: <P404 /> },
 				{ path: "500", element: <P500 /> },
 				{ path: "*", element: <Navigate to={"404"} replace /> },
+			],
+		},
+		{
+			path: "admin",
+			element: <PrivateRoute component={() => <StaticPageLayout />} />,
+			children: [
+				{
+					index: true,
+					element: <Navigate to={"/admin/products"} replace />,
+				},
+				{
+					path: "products",
+					element: <Outlet />,
+					children: [
+						{
+							path: "",
+							element: <ProductsList />,
+						},
+					],
+				},
 			],
 		},
 	]);

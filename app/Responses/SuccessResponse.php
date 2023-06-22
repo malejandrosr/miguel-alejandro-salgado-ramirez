@@ -15,7 +15,7 @@ class SuccessResponse implements Responsable
      * @param  array  $headers
      */
     public function __construct(
-        private string|object $data,
+        private string|object|array $data,
         private ?int $code = Response::HTTP_OK,
         private ?array $headers = []
     )

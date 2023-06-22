@@ -1,5 +1,14 @@
 import { combineReducers } from "redux";
-import { FLUSH, PAUSE, PURGE, PERSIST, REGISTER, REHYDRATE, persistStore, persistReducer } from "redux-persist";
+import {
+	FLUSH,
+	PAUSE,
+	PURGE,
+	PERSIST,
+	REGISTER,
+	REHYDRATE,
+	persistStore,
+	persistReducer,
+} from "redux-persist";
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import storage from "localforage";

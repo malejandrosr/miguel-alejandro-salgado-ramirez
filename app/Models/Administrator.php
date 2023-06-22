@@ -145,8 +145,9 @@ class Administrator extends Authenticatable
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @param  string  $search
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeSearchCriteria(Builder $query, string $search): Builder
+    public function scopeSearchCriteria(Builder $query, string $search)
     {
         return $query->where('name', 'like', "%{$search}%")
             ->orWhere('lastname', 'like', "%{$search}%")
@@ -156,8 +157,10 @@ class Administrator extends Authenticatable
 
     /**
      * Avatar mutator/accessor.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    public function avatar(): Attribute
+    public function avatar()
     {
         return Attribute::make(
             fn () => $this->attributes['avatar'] ?? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=200&f=y'

@@ -68,4 +68,31 @@ declare namespace API {
 	namespace Users {
 		export interface IGetUsersQuery {}
 	}
+
+	/**
+	 * This namespace is for products api
+	 */
+	namespace Products {
+		export interface IGetProductsQuery {}
+
+		export interface IPersistProductParams {
+			uuid?: string;
+			sku: string;
+			dollar_price: number;
+			peso_price: number;
+			points: number;
+			name: {
+				es: string;
+				en: string;
+			};
+			short_description: {
+				es: string;
+				en: string;
+			};
+			long_description?: {
+				es?: string | null;
+				en?: string | null;
+			};
+		}
+	}
 }

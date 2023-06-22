@@ -12,7 +12,10 @@ export const users = api.injectEndpoints({
 		 *
 		 * @author Miguel Alejandro Salgado Ramírez <alejandrosram@outlook.com>
 		 */
-		index: builder.query<GENERAL.IPaginate<GENERAL.Models.IUser>, API.Users.IGetUsersQuery>({
+		getUsersList: builder.query<
+			GENERAL.IPaginate<GENERAL.Models.IUser>,
+			API.Users.IGetUsersQuery
+		>({
 			query: (params) => {
 				const parsedParams = params && !isEmpty(params) ? `?${stringify(params)}` : "";
 
@@ -24,6 +27,8 @@ export const users = api.injectEndpoints({
 					},
 				};
 			},
+			providesTags: ["users"],
+			extraOptions: { maxRetries: 0 },
 		}),
 	}),
 });

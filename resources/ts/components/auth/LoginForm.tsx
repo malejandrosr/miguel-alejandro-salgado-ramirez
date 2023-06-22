@@ -21,7 +21,9 @@ const LoginForm = () => {
 			.email("El correo ingresado no es válido")
 			.required("Debes de ingresar un correo electrónico")
 			.typeError("Ingresa un valor"),
-		password: Yup.string().required("Debes de ingresar una contraseña").typeError("Ingresa un valor"),
+		password: Yup.string()
+			.required("Debes de ingresar una contraseña")
+			.typeError("Ingresa un valor"),
 	});
 
 	const defaultValues: API.Auth.ILoginParams = {
@@ -47,17 +49,28 @@ const LoginForm = () => {
 		setError,
 	} = formMethods;
 
-	const onSubmit = (data: API.Auth.ILoginParams) => handleServerRequest(() => handleSubmit(data), setError);
+	const onSubmit = (data: API.Auth.ILoginParams) =>
+		handleServerRequest(() => handleSubmit(data), setError);
 
 	return (
 		<FormProvider methods={formMethods} onSubmit={submitRHF(onSubmit)}>
 			<Grid>
 				<Grid.Col span={12}>
-					<RHFTextInput label="Correo electrónico" name="email" placeholder="usuario@google.com" icon={<IconMail size={14} />} />
+					<RHFTextInput
+						label="Correo electrónico"
+						name="email"
+						placeholder="usuario@google.com"
+						icon={<IconMail size={14} />}
+					/>
 				</Grid.Col>
 
 				<Grid.Col span={12}>
-					<RHFPasswordInput label="Contraseña" name="password" placeholder="•••••••••••••••" icon={<IconLock size={14} />} />
+					<RHFPasswordInput
+						label="Contraseña"
+						name="password"
+						placeholder="•••••••••••••••"
+						icon={<IconLock size={14} />}
+					/>
 				</Grid.Col>
 
 				<Grid.Col span={12}>

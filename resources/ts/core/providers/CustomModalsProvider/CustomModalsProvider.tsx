@@ -11,6 +11,7 @@ const CustomModalsProvider = ({ children, modals }: CORE.Providers.ICustomModals
 				centered: true,
 				closeOnEscape: true,
 				closeOnClickOutside: true,
+				size: "lg",
 				styles: {
 					title: {
 						fontWeight: 600,
@@ -23,11 +24,15 @@ const CustomModalsProvider = ({ children, modals }: CORE.Providers.ICustomModals
 					},
 					header: {
 						padding: "10px 20px !important",
-						borderBottom: `solid 1px ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]} !important`,
+						borderBottom: `solid 1px ${
+							theme.colorScheme === "dark"
+								? theme.colors.dark[4]
+								: theme.colors.gray[2]
+						} !important`,
 						margin: "0 !important",
 					},
 					body: {
-						padding: 0,
+						padding: "10px 20px !important",
 						paddingBottom: 8,
 					},
 				},

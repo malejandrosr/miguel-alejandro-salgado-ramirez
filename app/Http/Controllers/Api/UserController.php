@@ -126,7 +126,7 @@ class UserController extends Controller
         $user->disabled = !$user->disabled;
         $user->save();
 
-        $message = $user->disabled ? 'disabled' : 'enabled';
+        $message = $user->disabled ? 'enabled' : 'disabled';
 
         return new SuccessResponse(__("User {$message} successfully."));
     }
@@ -143,7 +143,7 @@ class UserController extends Controller
         $validated = (object)[];
 
         $requiredPassword = $uuid === 'NULL' ? 'required' : 'sometimes';
-        $uniqueEmail = "unique:users,email,{$uuid},id,disabled,deleted_at,NULL";
+        $uniqueEmail = "unique:users,email,{$uuid},deleted_at";
 
         $request->validate([
             'avatar' => ['sometimes', 'image', 'mimes:png,jpg', 'max:8096'],

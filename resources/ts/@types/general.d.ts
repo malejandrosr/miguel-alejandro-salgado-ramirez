@@ -135,6 +135,39 @@ declare namespace GENERAL {
 			roles?: Array<IRole> | null;
 			roles_count?: number | null;
 		}
+
+		/**
+		 * Interface for product model
+		 */
+		export interface IProduct {
+			id: number;
+			uuid: string;
+			sku: string;
+			dollar_price: number;
+			peso_price: number;
+			points: number;
+			active: boolean;
+			created_at: string | null;
+			updated_at: string | null;
+			deleted_at: string | null;
+			product_translations?: Array<IProductTranslation> | null;
+			product_translations_count?: number | null;
+		}
+
+		/**
+		 * Interface for product translation model
+		 */
+		export interface IProductTranslation {
+			product_id: number;
+			name: string;
+			short_description: string;
+			long_description: string | null;
+			url: string;
+			language: string;
+			created_at: string | null;
+			updated_at: string | null;
+			product?: App.Models.Product | null;
+		}
 	}
 
 	/**
@@ -164,14 +197,16 @@ declare namespace GENERAL {
 	 * Interface for (Private/Public)Route components
 	 */
 	export interface IRoute {
-		component: (props: any) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null;
+		component: (
+			props: any,
+		) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null;
 	}
 
 	/**
 	 * Interface for server error
 	 */
 	export interface IServerError {
-		data : {
+		data: {
 			code: number;
 			error: string;
 			message: string | Record<string, any>;

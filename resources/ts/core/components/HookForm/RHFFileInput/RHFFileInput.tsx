@@ -3,7 +3,12 @@ import { FileInput } from "@mantine/core";
 
 import ValueComponent from "./ValueComponent";
 
-const RHFFileInput = ({ label, name, multiple = false, ...rest }: CORE.Components.IRHFFileInput) => {
+const RHFFileInput = ({
+	label,
+	name,
+	multiple = false,
+	...rest
+}: CORE.Components.IRHFFileInput) => {
 	const { control } = useFormContext();
 
 	return (

@@ -20,7 +20,9 @@ const Logo = () => {
 				/>
 
 				<div className={classes.brandContainer}>
-					<Text className={classes.brandContainerText}>{import.meta.env.VITE_APP_NAME}</Text>
+					<Text className={classes.brandContainerText}>
+						{import.meta.env.VITE_APP_NAME}
+					</Text>
 				</div>
 			</Group>
 		</Box>

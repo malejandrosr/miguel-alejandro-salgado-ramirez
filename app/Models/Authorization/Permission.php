@@ -116,14 +116,17 @@ class Permission extends PermissionModel
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @param  string  $search
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeSearchCriteria(Builder $query, string $search): Builder
+    public function scopeSearchCriteria(Builder $query, string $search)
     {
         return $query->where('description', 'like', "%{$search}%");
     }
 
     /**
      * A permission belongs to some administrators of the model associated with its guard.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function administrators(): BelongsToMany
     {
@@ -138,6 +141,8 @@ class Permission extends PermissionModel
 
     /**
      * A permission can be applied to roles.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function roles(): BelongsToMany
     {
@@ -151,6 +156,8 @@ class Permission extends PermissionModel
 
     /**
      * A permission belongs to some users of the model associated with its guard.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users(): BelongsToMany
     {

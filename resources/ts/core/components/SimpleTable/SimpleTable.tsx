@@ -3,7 +3,7 @@ import { MantineReactTable as Table } from "mantine-react-table";
 import { MRT_Localization_ES } from "mantine-react-table/locales/es";
 import { PaginationState, SortingState } from "@tanstack/react-table";
 
-const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
+const SimpleTable = ({ cols, getQueryFn, actions }: CORE.Components.ISimpleTable) => {
 	// SimpleTable States
 	const [globalFilter, setGlobalFilter] = useState<string>("");
 	const [sorting, setSorting] = useState<SortingState>([]);
@@ -12,13 +12,28 @@ const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 		pageSize: 25,
 	});
 
-	const { data, isLoading, isError, isFetching } = getQueryFn(pagination.pageIndex + 1, globalFilter, pagination.pageSize);
+	const { data, isLoading, isError, isFetching } = getQueryFn(
+		pagination.pageIndex + 1,
+		globalFilter,
+		pagination.pageSize,
+	);
 
 	return (
 		<Table
 			columns={cols}
 			data={data?.data || []}
+			displayColumnDefOptions={{
+				"mrt-row-actions": {
+					mantineTableHeadCellProps: {
+						align: "center",
+					},
+					mantineTableBodyCellProps: {
+						align: "center",
+					},
+				},
+			}}
 			enableRowSelection
+			enableRowActions
 			enableColumnFilters={false}
 			enableDensityToggle={false}
 			enableFullScreenToggle={false}
@@ -43,7 +58,9 @@ const SimpleTable = ({ cols, getQueryFn }: CORE.Components.ISimpleTable) => {
 			onGlobalFilterChange={setGlobalFilter}
 			onPaginationChange={setPagination}
 			onSortingChange={setSorting}
+			positionActionsColumn="last"
 			positionGlobalFilter="left"
+			renderRowActionMenuItems={actions}
 			rowCount={data?.total}
 			state={{
 				globalFilter,

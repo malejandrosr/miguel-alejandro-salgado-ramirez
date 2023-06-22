@@ -4,7 +4,12 @@ import { IconEye as Eye, IconEyeOff as EyeOff } from "@tabler/icons-react";
 
 import styles from "@core/components/HookForm/styles";
 
-const RHFPasswordInput = ({ label, name, onChange, ...rest }: CORE.Components.IRHFPasswordInput) => {
+const RHFPasswordInput = ({
+	label,
+	name,
+	onChange,
+	...rest
+}: CORE.Components.IRHFPasswordInput) => {
 	const { control } = useFormContext();
 
 	const { classes } = styles();
@@ -27,7 +32,9 @@ const RHFPasswordInput = ({ label, name, onChange, ...rest }: CORE.Components.IR
 					id={name}
 					label={label}
 					error={error?.message}
-					visibilityToggleIcon={({ reveal, size }) => (reveal ? <EyeOff size={size} /> : <Eye size={size} />)}
+					visibilityToggleIcon={({ reveal, size }) =>
+						reveal ? <EyeOff size={size} /> : <Eye size={size} />
+					}
 					onChange={handleOnChange(field.onChange)}
 					autoComplete="off"
 					classNames={{

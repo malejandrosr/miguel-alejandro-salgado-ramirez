@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('product_translations', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('product_id');
             $table->string('name');
             $table->text('short_description');
-            $table->text('long_description');
+            $table->text('long_description')->nullable();
             $table->string('url');
             $table->string('language');
             $table->timestamps();

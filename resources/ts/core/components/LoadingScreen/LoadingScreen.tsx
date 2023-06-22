@@ -11,7 +11,8 @@ const LoadingScreen = () => {
 
 	const { pathname } = useLocation();
 
-	const getClassNameOfLayoutType = () => (pathname.includes("dashboard") ? classes.dashboard : classes.auth);
+	const getClassNameOfLayoutType = () =>
+		pathname.includes("dashboard") ? classes.dashboard : classes.auth;
 
 	return (
 		<Group position="center" className={getClassNameOfLayoutType()}>

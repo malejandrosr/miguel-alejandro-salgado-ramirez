@@ -9,7 +9,8 @@ const useActiveLink = () => {
 	useEffect(() => {
 		const splitedPath = location.pathname.split("/").filter(Boolean);
 
-		const selectedPath = splitedPath.length > 1 ? `/${splitedPath[0]}/${splitedPath[1]}` : `/${splitedPath[0]}`;
+		const selectedPath =
+			splitedPath.length > 1 ? `/${splitedPath[0]}/${splitedPath[1]}` : `/${splitedPath[0]}`;
 
 		setActiveLink(selectedPath);
 	}, [location]);

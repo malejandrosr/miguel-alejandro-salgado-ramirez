@@ -16,6 +16,26 @@ declare namespace COMPONENTS {
 		}
 	}
 
+	namespace Products {
+		export interface IProductDetailProps {
+			uuid: string;
+			opened: boolean;
+			onClose: () => void;
+		}
+
+		export interface IProductDetailCardParentProps {
+			children: React.JSX.Element | React.JSX.Element[];
+			isLoading: boolean;
+			spacing?: import("@mantine/core").MantineNumberSize | number;
+		}
+
+		export interface IProductFormProps {
+			innerProps: {
+				product?: GENERAL.Models.IProduct;
+			};
+		}
+	}
+
 	/**
 	 * Interface for auth components folder
 	 */

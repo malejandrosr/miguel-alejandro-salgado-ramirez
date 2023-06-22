@@ -9,7 +9,14 @@ const RHFCheckbox = ({ label, name, ...rest }: CORE.Components.IRHFCheckbox) => 
 			name={name}
 			control={control}
 			render={({ field, fieldState: { error } }) => (
-				<Checkbox {...field} id={name} label={label} error={error?.message} checked={field.value} {...rest} />
+				<Checkbox
+					{...field}
+					id={name}
+					label={label}
+					error={error?.message}
+					checked={field.value}
+					{...rest}
+				/>
 			)}
 		/>
 	);

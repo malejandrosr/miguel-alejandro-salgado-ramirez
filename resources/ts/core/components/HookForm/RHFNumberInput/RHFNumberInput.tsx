@@ -8,7 +8,9 @@ const RHFNumberInput = ({ label, name, ...rest }: CORE.Components.IRHFNumberInpu
 		<Controller
 			name={name}
 			control={control}
-			render={({ field, fieldState: { error } }) => <NumberInput {...field} id={name} label={label} error={error?.message} {...rest} />}
+			render={({ field, fieldState: { error } }) => (
+				<NumberInput {...field} id={name} label={label} error={error?.message} {...rest} />
+			)}
 		/>
 	);
 };

@@ -11,14 +11,24 @@ const isArray = (value: any) => Array.isArray(value);
 const isDate = (value: any) => value instanceof Date;
 
 const isBlob = (value: any) =>
-	isObject(value) && typeof value.size === "number" && typeof value.type === "string" && typeof value.slice === "function";
+	isObject(value) &&
+	typeof value.size === "number" &&
+	typeof value.type === "string" &&
+	typeof value.slice === "function";
 
 const isFile = (value: any) =>
-	isBlob(value) && typeof value.name === "string" && (isObject(value.lastModifiedDate) || typeof value.lastModified === "number");
+	isBlob(value) &&
+	typeof value.name === "string" &&
+	(isObject(value.lastModifiedDate) || typeof value.lastModified === "number");
 
 const initConfig = (value: any) => (isUndefined(value) ? false : value);
 
-const buildFormData = (data: any, config?: HELPERS.IBuildFormData, existingFormData?: FormData, key?: any) => {
+const buildFormData = (
+	data: any,
+	config?: HELPERS.IBuildFormData,
+	existingFormData?: FormData,
+	key?: any,
+) => {
 	config = config || {};
 	existingFormData = existingFormData || new FormData();
 
@@ -67,7 +77,11 @@ const buildFormData = (data: any, config?: HELPERS.IBuildFormData, existingFormD
 				}
 			}
 
-			const keyPrefix = key ? (config?.dotsForObjectNotation ? `${key}.${prop}` : `${key}[${prop}]`) : prop;
+			const keyPrefix = key
+				? config?.dotsForObjectNotation
+					? `${key}.${prop}`
+					: `${key}[${prop}]`
+				: prop;
 
 			buildFormData(value, config, existingFormData, keyPrefix);
 		});

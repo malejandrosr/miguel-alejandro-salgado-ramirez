@@ -35,7 +35,12 @@ const Navbar = ({ opened }: CORE.Components.INavbar) => {
 	}, [maxWidthSm, minWidthSm]);
 
 	return (
-		<Transition mounted={navbarBaseWidth === navbarWidth} transition="scale-x" duration={400} timingFunction="ease">
+		<Transition
+			mounted={navbarBaseWidth === navbarWidth}
+			transition="scale-x"
+			duration={400}
+			timingFunction="ease"
+		>
 			{(styles) => (
 				<MantineNavbar
 					p="md"

@@ -11,15 +11,24 @@ const styles = createStyles((theme) => ({
 	input: {
 		fontWeight: 500,
 		"&:focus": {
-			backgroundColor: theme.colorScheme === "dark" ? theme.fn.rgba(theme.colors.blue[8], 0.15) : theme.colors.blue[0],
+			backgroundColor:
+				theme.colorScheme === "dark"
+					? theme.fn.rgba(theme.colors.blue[8], 0.15)
+					: theme.colors.blue[0],
 		},
 		"&::placeholder": {
 			fontWeight: 400,
 		},
 	},
 	invalid: {
-		backgroundColor: theme.colorScheme === "dark" ? theme.fn.rgba(theme.colors.red[8], 0.15) : `${theme.colors.red[0]} !important`,
-		borderColor: theme.colorScheme === "dark" ? theme.colors.red[7] : `${theme.colors.red[6]} !important`,
+		backgroundColor:
+			theme.colorScheme === "dark"
+				? theme.fn.rgba(theme.colors.red[8], 0.15)
+				: `${theme.colors.red[0]} !important`,
+		borderColor:
+			theme.colorScheme === "dark"
+				? theme.colors.red[7]
+				: `${theme.colors.red[6]} !important`,
 		color: theme.colorScheme === "dark" ? "#fff" : "#000",
 
 		"&::placeholder": {
@@ -28,12 +37,21 @@ const styles = createStyles((theme) => ({
 	},
 	inputPassword: {
 		"&:focus-within": {
-			backgroundColor: theme.colorScheme === "dark" ? theme.fn.rgba(theme.colors.blue[8], 0.15) : `${theme.colors.blue[0]}`,
+			backgroundColor:
+				theme.colorScheme === "dark"
+					? theme.fn.rgba(theme.colors.blue[8], 0.15)
+					: `${theme.colors.blue[0]}`,
 		},
 	},
 	invalidPassword: {
-		backgroundColor: theme.colorScheme === "dark" ? theme.fn.rgba(theme.colors.red[8], 0.15) : `${theme.colors.red[0]} !important`,
-		borderColor: theme.colorScheme === "dark" ? theme.colors.red[7] : `${theme.colors.red[6]} !important`,
+		backgroundColor:
+			theme.colorScheme === "dark"
+				? theme.fn.rgba(theme.colors.red[8], 0.15)
+				: `${theme.colors.red[0]} !important`,
+		borderColor:
+			theme.colorScheme === "dark"
+				? theme.colors.red[7]
+				: `${theme.colors.red[6]} !important`,
 		[`& .${getStylesRef("innerInput")}`]: {
 			border: "none",
 			"$::placeholder": {

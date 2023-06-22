@@ -162,8 +162,9 @@ class User extends Authenticatable
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @param  string  $search
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeSearchCriteria(Builder $query, string $search): Builder
+    public function scopeSearchCriteria(Builder $query, string $search)
     {
         return $query->where('name', 'like', "%{$search}%")
             ->orWhere('lastname', 'like', "%{$search}%")
@@ -174,8 +175,10 @@ class User extends Authenticatable
 
     /**
      * Avatar mutator/accessor.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    public function avatar(): Attribute
+    public function avatar()
     {
         return Attribute::make(
             fn () => $this->attributes['avatar'] ?? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=200&f=y'
@@ -186,8 +189,9 @@ class User extends Authenticatable
      * Route notifications for the Vonage channel.
      *
      * @param  \Illuminate\Notifications\Notification  $notification
+     * @return string
      */
-    public function routeNotificationForVonage(Notification $notification): string
+    public function routeNotificationForVonage(Notification $notification)
     {
         return $this->phone;
     }

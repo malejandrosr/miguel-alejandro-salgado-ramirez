@@ -11,7 +11,13 @@ const Header = ({ opened, setOpened }: CORE.Components.IHeader) => {
 			<div className={classes.inner}>
 				<div className={classes.brand}>
 					<div className={classes.burgerContainer}>
-						<Burger mr="xl" size="md" opened={opened} color={theme.colors.gray[6]} onClick={() => setOpened((o) => !o)} />
+						<Burger
+							mr="xl"
+							size="md"
+							opened={opened}
+							color={theme.colors.gray[6]}
+							onClick={() => setOpened((o) => !o)}
+						/>
 					</div>
 					<Logo />
 				</div>

@@ -13,7 +13,14 @@ const RHFColorPicker = ({ label, name, swatches, ...rest }: CORE.Components.IRHF
 			render={({ field, fieldState: { error } }) => (
 				<div>
 					<Text>{label}</Text>
-					<ColorPicker {...field} id={name} swatches={swatches ?? defaultSwatches} withPicker={false} fullWidth {...rest} />
+					<ColorPicker
+						{...field}
+						id={name}
+						swatches={swatches ?? defaultSwatches}
+						withPicker={false}
+						fullWidth
+						{...rest}
+					/>
 					<Text align="center" sx={{ marginTop: 5 }}>
 						{field.value} {error?.message}
 					</Text>
